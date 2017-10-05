@@ -1,4 +1,6 @@
-const Sequelize = require('sequelize');
 const config = require('./config');
+const Sequelize = require('sequelize');
+var sequelize = new Sequelize(config.dbConnectionString);
+require('sequelize-values')(sequelize);
 
-module.exports = new Sequelize(config.dbConnectionString);
+module.exports = sequelize;

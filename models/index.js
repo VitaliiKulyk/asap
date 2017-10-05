@@ -21,8 +21,18 @@ const Order = sequelize.define('order', {
 	}
 });
 //
+User.hasMany(Order, {foreignKey: 'user_id'});
 // User.hasMany(Order, { as: 'orders'});
-Order.belongsTo(User,  {foreignKey: 'user_id', as: 'orders'})
+// Model.hasMany(part, {foreignKey: 'assetserviceid'});
+// return Model.findAll({
+//   where: {$and: [..._.map(condition.filters, (node, key) => ({[key]: node})), condition.tenantid ? {tenantid: condition.tenantid} : {}]},
+//   include: [{
+// 	model: part,
+// 	as: 'parts',
+// 	attributes: ['name', 'price', 'number', 'quantity']
+//   }]
+// });
+// Order.belongsTo(User,  {foreignKey: 'user_id', as: 'orders'})
 
 module.exports = {
 	User,

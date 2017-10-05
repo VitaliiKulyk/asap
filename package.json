@@ -25,6 +25,7 @@
     "jsonwebtoken": "^8.0.1",
     "lodash": "^4.17.4",
     "pg": "^7.3.0",
-    "sequelize": "^4.13.3"
+    "sequelize": "^4.13.3",
+    "sequelize-values": "^1.1.0"
   }
 }
