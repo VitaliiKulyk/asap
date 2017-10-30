@@ -3,7 +3,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
 const config = require('./config');
-const controllers = require('./controllers');
+const router = require('./router');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -11,6 +11,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static('client'));
 
-controllers.set(app);
+router.set(app);
 
 app.listen(config.port, () => console.log('App listening on port '+ config.port));
