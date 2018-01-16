@@ -2,13 +2,8 @@ const sequelize = require('../db');
 const Users = require('../models').User;
 const Orders = require('../models').Order;
 
-const addUser = user => {
-	return Users.create(user);
-}
-
-const getUserByLogin = login => {
-	return Users.findOne({where: {login}});
-}
+const addUser = user => Users.create(user);
+const getUserByLogin = login => Users.findOne({where: {login}});
 
 const getUsersWithOrders = () => {
 	return Users.findAll({

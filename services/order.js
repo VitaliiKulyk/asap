@@ -1,7 +1,7 @@
-const getAll = () => {
-	return Promise.resolve([4,5])
-}
+const Orders = require('../models').Order;
 
-module.exports = {
-	getAll
-}
+const getAll = () => Orders.findAll();
+const get = id => Orders.findById(id);
+const add = order => Orders.create(order);
+
+module.exports = {add, getAll, getById};

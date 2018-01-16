@@ -1,5 +1,5 @@
-const config =  require('../config');
 const jwt = require('jsonwebtoken');
+const config =  require('../config');
 
 const checkAuth = (req, res, next) => {
 	var token = req.headers['token'];
@@ -11,7 +11,8 @@ const checkAuth = (req, res, next) => {
 			return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
 
     req.user = {
-			login: decoded.login
+			login: decoded.login,
+			id: decoded.id
 		};
     next();
 	});

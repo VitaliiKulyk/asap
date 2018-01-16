@@ -5,6 +5,21 @@ function getOrders(req, res){
 	.then(data => res.send(data));
 };
 
+function getOrder(req, res){
+	orderService.getById(req.params.id)
+	.then(data => res.send(data));
+}
+
+function addOrder(req, res){
+	orderService.add({
+		title: req.body.title,
+		user_id: 1
+	})
+	.then(data => res.send(data));
+};
+
 module.exports = {
-	getOrders
+	getOrders,
+	getOrder,
+	addOrder
 }

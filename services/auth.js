@@ -19,6 +19,7 @@ const authenticate = params => {
 
 		const payload = {
 			login: user.login,
+			id: user.id,
 			time: new Date()
 		};
 
